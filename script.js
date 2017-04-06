@@ -20,10 +20,10 @@ window.addEventListener('DOMContentLoaded', function() {
       // create a built-in "sphere" shape; its constructor takes 4 params: name, subdivisions, radius, scene
       var sphere = BABYLON.Mesh.CreateSphere('sphere1', 16, 2, scene);
 
-    //  BABYLON.SceneLoader.ImportMesh("", "assets/", "Rabbit.babylon", scene, function (newMeshes) {
-       // Set the target of the camera to the first imported mesh
-    //   camera.target = newMeshes[0];
-   //});
+      BABYLON.SceneLoader.ImportMesh("", "assets/", "Rabbit.babylon", scene, function (newMeshes) {
+        Set the target of the camera to the first imported mesh
+       camera.target = newMeshes[0];
+   });
 
       // move the sphere upward 1/2 of its height
       sphere.position.y = 1;
