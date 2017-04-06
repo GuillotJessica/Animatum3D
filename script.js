@@ -6,7 +6,7 @@ window.addEventListener('DOMContentLoaded', function() {
       var scene = new BABYLON.Scene(engine);
 
       // create a FreeCamera, and set its position to (x:0, y:5, z:-10)
-      var camera = new BABYLON.FreeCamera('camera1', new BABYLON.Vector3(0, 5,-10), scene);
+   var camera = new BABYLON.ArcRotateCamera("ArcRotateCamera", 1, 0.8, 10, new BABYLON.Vector3(0, 0, 0), scene);
 
       // target the camera to scene origin
       camera.setTarget(BABYLON.Vector3.Zero());
@@ -20,10 +20,10 @@ window.addEventListener('DOMContentLoaded', function() {
       // create a built-in "sphere" shape; its constructor takes 4 params: name, subdivisions, radius, scene
       var sphere = BABYLON.Mesh.CreateSphere('sphere1', 16, 2, scene);
 
-      BABYLON.SceneLoader.ImportMesh("", "assets/", "Rabbit.babylon", scene, function (newMeshes) {
+    //  BABYLON.SceneLoader.ImportMesh("", "assets/", "Rabbit.babylon", scene, function (newMeshes) {
        // Set the target of the camera to the first imported mesh
-       camera.target = newMeshes[0];
-   });
+    //   camera.target = newMeshes[0];
+   //});
 
       // move the sphere upward 1/2 of its height
       sphere.position.y = 1;
